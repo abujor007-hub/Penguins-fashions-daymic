@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.hero-container{
+    width: 1320px;
+    height: 490px;
+    margin: 0px auto;
+}
+
+.slick-prev, .slick-next {
+    color: red; /* Sets the button's background */
+}
+
+.slick-prev::before, .slick-next::before{
+    color: red;
+}
+
+
+
+
+
+
