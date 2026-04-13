@@ -77,7 +77,7 @@
   
     <!-- js link start -->
      
-  <script src="js/script.js"></script>
+  <script src="{{ asset('js/script.js') }}"></script>
 
     <!-- js link end -->
     

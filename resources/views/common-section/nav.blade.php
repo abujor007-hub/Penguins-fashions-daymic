@@ -17,7 +17,7 @@
      <!-- slick slider link end -->
 
     
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <title>Document</title>
 </head>
 <body>

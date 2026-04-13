@@ -1,4 +1,4 @@
-
+@include('common-section.nav')
 
     <!-- hero section start -->
      <div class="hero-container container  ">
@@ -16,7 +16,7 @@
 </div>
         </div>
         <div class="col ">
-          <img  class="img-fluid" src="Icon and image/slider-image-1.png" alt="">
+          <img  class="img-fluid" src="{{ asset('Icon and image/slider-image-1.png') }}" alt="">
         </div>
          <div class="col mt-5">
           <div class="">
@@ -30,7 +30,7 @@
 </div>
         </div>
         <div class="col ">
-          <img  class="img-fluid" src="Icon and image/slider-image-1.png" alt="">
+          <img  class="img-fluid" src="{{ asset('Icon and image/slider-image-1.png') }}" alt="">
         </div>
 
          <div class="col mt-5">
@@ -45,7 +45,7 @@
 </div>
         </div>
         <div class="col">
-          <img  class="img-fluid" src="Icon and image/slider-image-1.png" alt="">
+          <img  class="img-fluid" src="{{ asset('Icon and image/slider-image-1.png') }}" alt="">
         </div>
 
 
@@ -240,4 +240,4 @@
  </div>
     <!-- shoes end -->
 
-   
+   @include('common-section.footer')
