@@ -195,6 +195,12 @@
             font-size: 1.5rem;
             color: var(--primary-color);
         }
+
+        .container-table{
+    width: 500px;
+    display: block;
+    margin: 0px auto;
+}
     </style>
 </head>
 <body>
@@ -205,13 +211,13 @@
         </div>
         <ul class="nav flex-column p-3">
             <li class="nav-item">
-                <a class="nav-link active" href="#">
+                <a class="nav-link active" href="{{ route('dashboard.main.page') }}">
                     <i class="bi bi-speedometer2"></i> Dashboard
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="bi bi-people"></i> Users
+                <a class="nav-link" href="{{ route('catagory.page') }}">
+                    <i class="bi bi-people"></i> Catagory
                 </a>
             </li>
             <li class="nav-item">
@@ -245,8 +251,8 @@
 
               <a class="d-flex gap-2 nav-link collapsed" href="#" data-bs-toggle="collapse"
                             data-bs-target="#collapseLayouts1" aria-expanded="false" aria-controls="collapseLayouts">
-                            <div class="sb-nav-link-icon"><i class="bi bi-product-hunt"></i></div>
-                            Product
+                            <div class="sb-nav-link-icon"><i class="bi bi-house"></i></div>
+                            Location
                             <div class="sb-sidenav-collapse-arrow"><i class="bi bi-chevron-down"></i></div>
                         </a>
                         <div class="collapse" id="collapseLayouts1" aria-labelledby="headingOne"
@@ -303,9 +309,17 @@
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end">
                         <li><a class="dropdown-item" href="#"><i class="bi bi-person me-2"></i>Profile</a></li>
-                        <li><a class="dropdown-item" href="#"><i class="bi bi-gear me-2"></i>Settings</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-gear me-2"></i>Settings</a>
+                        </li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-right me-2"></i>Logout</a></li>
+                        <li>
+                            <form action="{{ route('logout') }}" method="POST">
+                                @csrf
+                                <button type="submit" class="dropdown-item">
+                                    <i class="bi bi-box-arrow-right me-2"></i> Logout
+                                </button>
+                            </form>
+                        </li>
                     </ul>
                 </div>
             </div>
