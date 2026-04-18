@@ -14,12 +14,23 @@ public function view_catagory(){
 }
 
 public function store_catagory(Request $request){
+    $validated= $request->validate([
+        'add_catagory'=> 'required',
+
+    ]);
     $data= new Catagory();
     $data->add_catagory=$request->add_catagory;
     $data->save();
-    return redirect()->back();
+    return redirect()->back()->with('success', 'data store successfully ');
 
     
+}
+
+public function delete_catagory(Request $request, $id){
+    $data=Catagory::find($id);
+    $data->delete();
+    return redirect()->back()->with('success', 'catagory items delete successfully');
+
 }
     
 }

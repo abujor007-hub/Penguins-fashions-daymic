@@ -35,7 +35,13 @@
                                         @foreach ($data as $name)
                                              <tr>
                                             <td>{{ $name->add_catagory }}</td>
-                                            <td><a href="" class="btn btn-danger">Delete</a> </td>
+                                            <td>
+                                                <form action="{{ route('catagory.delete',$name->id) }}" method="post" enctype="multipart/form-data">
+                                                    @csrf
+                                                    @method('Delete')
+                                                    <input type="submit" class="btn btn-danger" value="Delete">
+                                                </form>
+                                             </td>
                                         </tr>
                                         @endforeach
                                        

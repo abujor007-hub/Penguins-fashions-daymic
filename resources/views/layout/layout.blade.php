@@ -327,6 +327,7 @@
 
        <!-- main content start -->
       <div class="main_container">
+        @include('alart.message')
         @yield('content')
 
 

@@ -40,5 +40,8 @@ Route::get('dashboard/main/page',[PagesController::class,'dashboard_main'])->nam
 // catagory route start
 Route::get('catagory/page',[Catagory_Controller::class,'view_catagory'])->name('catagory.page'); 
 Route::put('store/catagory',[Catagory_Controller::class,'store_catagory'])->name('catagory.store'); 
+Route::delete('delete/catagory/{id}',[Catagory_Controller::class,'delete_catagory'])->name('catagory.delete'); 
+
+
 
 // catagory route end
