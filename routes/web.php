@@ -3,6 +3,7 @@
 use App\Http\Controllers\Catagory_Controller;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -45,3 +46,10 @@ Route::delete('delete/catagory/{id}',[Catagory_Controller::class,'delete_catagor
 
 
 // catagory route end
+
+
+// products page route start
+Route::get('products/page',[ProductsController::class,'product_page'])->name('product.page');
+Route::put('products/store',[ProductsController::class,'store_product'])->name('products.store');
+
+// products page route end

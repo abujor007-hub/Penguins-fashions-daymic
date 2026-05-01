@@ -32,6 +32,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        
                                         @foreach ($data as $name)
                                              <tr>
                                             <td>{{ $name->add_catagory }}</td>

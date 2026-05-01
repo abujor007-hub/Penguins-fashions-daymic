@@ -221,9 +221,20 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="bi bi-cart"></i> Products
-                </a>
+               
+              <a class="d-flex gap-2 nav-link collapsed" href="#" data-bs-toggle="collapse"
+                            data-bs-target="#collapseLayouts1" aria-expanded="false" aria-controls="collapseLayouts">
+                            <div class="sb-nav-link-icon"><i class="bi bi-cart"></i></div>
+                            Product
+                            <div class="sb-sidenav-collapse-arrow"><i class="bi bi-chevron-down"></i></div>
+                        </a>
+                        <div class="collapse" id="collapseLayouts1" aria-labelledby="headingOne"
+                            data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="{{ route('product.page') }}">Add Product</a>
+                                <a class="nav-link" href="">List of Product</a>
+                            </nav>
+                        </div>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">
@@ -249,19 +260,6 @@
                 </a>
             </li>
 
-              <a class="d-flex gap-2 nav-link collapsed" href="#" data-bs-toggle="collapse"
-                            data-bs-target="#collapseLayouts1" aria-expanded="false" aria-controls="collapseLayouts">
-                            <div class="sb-nav-link-icon"><i class="bi bi-house"></i></div>
-                            Location
-                            <div class="sb-sidenav-collapse-arrow"><i class="bi bi-chevron-down"></i></div>
-                        </a>
-                        <div class="collapse" id="collapseLayouts1" aria-labelledby="headingOne"
-                            data-bs-parent="#sidenavAccordion">
-                            <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="">Add Product</a>
-                                <a class="nav-link" href="">List of Product</a>
-                            </nav>
-                        </div>
         </ul>
         <div class="sidebar-footer mt-auto p-3">
             <div class="d-flex align-items-center">

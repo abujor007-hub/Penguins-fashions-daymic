@@ -10,6 +10,7 @@ class Catagory_Controller extends Controller
 
 public function view_catagory(){
     $data=Catagory::all();
+
     return view('pages.dashboardpage.catagory.catagory_page',compact('data'));
 }
 
