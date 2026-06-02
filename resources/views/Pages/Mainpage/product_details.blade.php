@@ -10,12 +10,17 @@
             </div>
             <div class="col">
                 <div class="div mb-3">
-                    <h4>Products Cetagory </h4>
+                    <h4>Products Cetagory : Jacket</h4>
 
                 </div>
 
                   <div class="div mb-3">
-                    <h4>Price :$200 </h4>
+                    <h4>Price :$300</h4>
+
+                </div>
+
+                  <div class="div mb-3">
+                    <h4> Discounted Price :$200</h4>
 
                 </div>
 

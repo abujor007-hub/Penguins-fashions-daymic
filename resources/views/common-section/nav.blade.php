@@ -18,12 +18,12 @@
 
     
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <title>Document</title>
+    <title>Panguins Fashions</title>
 </head>
 <body>
 
     <!-- navigation start -->
-     <nav class="navbar navbar-expand-lg bg-body-tertiary">
+     <nav class="navbar navbar-expand-lg bg-body-tertiary ">
   <div class="container-fluid">
     <a class="navbar-brand" href="#"> <img src="Icon and image/brand-icon.png" alt="" style="width: 150px; height: 30px;"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,30 +32,30 @@
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
       <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="home.html">Home</a>
+          <a class="nav-link active" aria-current="page" href="{{ route('home.page') }}">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="manjacket.html">Man jacket</a>
+          <a class="nav-link" href="{{ route('manjacket.page') }}">Man jacket</a>
         </li>
           <li class="nav-item">
-          <a class="nav-link" href="womanjacket.html">Woman jacket</a>
+          <a class="nav-link" href="{{ route('women.page') }}">Woman jacket</a>
         </li>
           <li class="nav-item">
-          <a class="nav-link" href="shoes.html">Shoes</a>
+          <a class="nav-link" href="{{ route('shoes.page') }}">Shoes</a>
         </li>
           <li class="nav-item">
-          <a class="nav-link" href="shop.html">Shop</a>
+          <a class="nav-link" href="{{ route('shop.page') }}">Shop</a>
         </li>
           <li class="nav-item">
-          <a class="nav-link" href="contack.html">Contact</a>
+          <a class="nav-link" href="{{ route('contact.page') }}">Contact</a>
         </li>
           
       </ul>
     
       
       <form class="d-flex gap-2" role="search">
-      <button type="button" class="btn btn-outline-primary">Login</button>
-  <button type="button" class="btn btn-outline-info">Sign In</button>
+      <a href="" type="button" class="btn btn-outline-primary">Login</a>
+  <a href="" type="button" class="btn btn-outline-info">Sign In</a>
       </form>
     </div>
   </div>

@@ -232,7 +232,7 @@
                             data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
                                 <a class="nav-link" href="{{ route('product.page') }}">Add Product</a>
-                                <a class="nav-link" href="">List of Product</a>
+                                <a class="nav-link" href="{{ route('products.list.page') }}">List of Product</a>
                             </nav>
                         </div>
             </li>

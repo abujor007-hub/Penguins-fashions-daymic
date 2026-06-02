@@ -2,19 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Products;
 use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
     public function home(){
-        return view('pages.mainpage.home');
+     $data['Man_Jacket']= Products::where('catagory', '=', 'Man Jacket')->take(3)->get();
+     $data['Woman_Jacket']= Products::where('catagory', '=', 'Woman Jacket')->take(3)->get();
+     $data['Shoes']= Products::where('catagory', '=', 'Shoes')->take(3)->get();
+    
+        return view('pages.mainpage.home')->with($data);
     }
 
     public function manjacket(){
         return view('pages.mainpage.manjacket');
     }
 
-    public function womanjacket(){
+    public function women(){
         return view('pages.mainpage.womanjacket');
     }
 
@@ -27,11 +32,13 @@ class PagesController extends Controller
     }
 
     public function contact(){
+        
         return view('pages.mainpage.contact');
     }
 
-    public function productinfo(){
-        return view('pages.mainpage.product.info');
+    public function productdetails($id){
+      
+        return view('pages.mainpage.product_details');
     }
 
 

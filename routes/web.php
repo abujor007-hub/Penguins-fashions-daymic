@@ -29,7 +29,7 @@ Route::get('women/page',[PagesController::class,'women'])->name('women.page');
 Route::get('shoes/page',[PagesController::class,'shoes'])->name('shoes.page');
 Route::get('shop/page',[PagesController::class,'shop'])->name('shop.page');
 Route::get('contact/page',[PagesController::class,'contact'])->name('contact.page');
-Route::get('productinfo/page',[PagesController::class,'productinfo'])->name('productinfo.page');
+Route::get('productdetails/page/{id}',[PagesController::class,'productdetails'])->name('productdetails.page');
 // main page route end
 
 // dashboard page route start
@@ -51,5 +51,12 @@ Route::delete('delete/catagory/{id}',[Catagory_Controller::class,'delete_catagor
 // products page route start
 Route::get('products/page',[ProductsController::class,'product_page'])->name('product.page');
 Route::put('products/store',[ProductsController::class,'store_product'])->name('products.store');
+Route::get('products/list/page',[ProductsController::class, 'products_list'])->name('products.list.page');
+Route::get('products/edit/page/{id}',[ProductsController::class, 'edit_products'])->name('products.edit.page');
+Route::put('products/update/page/{id}',[ProductsController::class, 'update_products'])->name('products.update.page');
+Route::delete('products/delete/page/{id}', [ProductsController::class, 'delete_products'])->name('products.delelte.page');
+
+
+
 
 // products page route end
