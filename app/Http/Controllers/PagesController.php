@@ -16,20 +16,26 @@ class PagesController extends Controller
     }
 
     public function manjacket(){
-        return view('pages.mainpage.manjacket');
+         $data['Man_Jacket']= Products::where('catagory', '=', 'Man Jacket')->take(3)->get();
+        return view('pages.mainpage.manjacket')->with($data);
     }
 
     public function women(){
-        return view('pages.mainpage.womanjacket');
+        $data['Woman_Jacket']= Products::where('catagory', '=', 'Woman Jacket')->take(3)->get();
+        return view('pages.mainpage.womanjacket')->with($data);
     }
 
     public function shoes(){
-        return view('pages.mainpage.shoes');
+        $data['Shoes']= Products::where('catagory', '=', 'Shoes')->take(3)->get();
+        return view('pages.mainpage.shoes')->with($data);
     }
 
         public function shop(){
-        return view('pages.mainpage.shop');
-    }
+            $data['Man_Jacket']= Products::where('catagory', '=', 'Man Jacket')->get();
+            $data['Woman_Jacket']= Products::where('catagory', '=', 'Woman Jacket')->get();
+            $data['Shoes']= Products::where('catagory', '=', 'Shoes')->get();
+            return view('pages.mainpage.shop')->with($data);
+        }
 
     public function contact(){
         
@@ -37,10 +43,16 @@ class PagesController extends Controller
     }
 
     public function productdetails($id){
+        $products= Products::find($id);
       
-        return view('pages.mainpage.product_details');
+        return view('pages.mainpage.product_details',compact('products'));
     }
+public function cart(){
 
+$cart= session()->get('cart',[]);
+
+    return view('pages.mainpage.cart', compact('cart'));
+}
 
     // dashbord page start
     public function dashboard_main(){
@@ -48,6 +60,9 @@ class PagesController extends Controller
     }
     // dashbord page end
 
-    
+    public function cheackout(){
+        $cheackout= session()->get('cart',[]);
+        return view('pages.mainpage.cheackout', compact('cheackout'));
+    }
 
 }

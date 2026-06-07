@@ -30,6 +30,8 @@ Route::get('shoes/page',[PagesController::class,'shoes'])->name('shoes.page');
 Route::get('shop/page',[PagesController::class,'shop'])->name('shop.page');
 Route::get('contact/page',[PagesController::class,'contact'])->name('contact.page');
 Route::get('productdetails/page/{id}',[PagesController::class,'productdetails'])->name('productdetails.page');
+Route::get('cart/page',[PagesController::class,'cart'])->name('cart.page');
+Route::get('cheackout/page',[PagesController::class,'cheackout'])->name('checkout.page');
 // main page route end
 
 // dashboard page route start
@@ -60,3 +62,11 @@ Route::delete('products/delete/page/{id}', [ProductsController::class, 'delete_p
 
 
 // products page route end
+
+// add to cart route start
+Route::get('addtocart/store/{id}', [ProductsController::class, 'addToCartStore'])->name('addtocart.store');
+Route::get('addtocart/item/delete/{id}', [ProductsController::class, 'addToCartItemDelete'])->name('addtocart.item.delete');
+Route::get('addtocart/clear', [ProductsController::class, 'addToCartClear'])->name('addtocart.clear');
+
+
+// add to cart route end

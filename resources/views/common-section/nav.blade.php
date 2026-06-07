@@ -21,11 +21,15 @@
     <title>Panguins Fashions</title>
 </head>
 <body>
+ @php
+   $cart = session()->get('cart', []);
 
+
+   @endphp
     <!-- navigation start -->
      <nav class="navbar navbar-expand-lg bg-body-tertiary ">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#"> <img src="Icon and image/brand-icon.png" alt="" style="width: 150px; height: 30px;"></a>
+    <a class="navbar-brand" href="#"> <img src="{{ asset('Icon and image/brand-icon.png') }}" alt="" style="width: 150px; height: 30px;"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -51,7 +55,12 @@
         </li>
           
       </ul>
-    
+    <a href="{{ route('cart.page') }}" class="me-5 text-dark fs-4 fw-bold">
+      <i class="bi bi-cart"></i>
+        <span class=" text-white btn btn-danger mb-3 "
+              style="width: 20px; height: 20px; font-size: 10px; text-decoration:  none; padding: 5px;">{{ count($cart) ?? 0 }}</span>
+       
+    </a>
       
       <form class="d-flex gap-2" role="search">
       <a href="" type="button" class="btn btn-outline-primary">Login</a>

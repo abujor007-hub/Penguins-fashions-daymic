@@ -80,8 +80,10 @@
     @foreach ($Man_Jacket as $data)
         <div class="col">
     <div class="card h-100 p-3">
+      <a href="{{ route('productdetails.page',$data->id) }}">
 
       <img src="{{ asset('storage/' . $data->Products_image) }}" class="card-img-top" alt="...">
+      </a>
 
       <div class="card-body">
         <h5 class="card-title">{{$data->title}}</h5>
@@ -90,7 +92,7 @@
        <div class="d-flex justify-content-between align-items-center">
       <h3 class="text-danger">{{ $data->price }}</h3>
 
-      <a href="#" class="btn btn-warning">Bye Now</a>
+      <a href="{{ route('addtocart.store',$data->id) }}" class="btn btn-warning">Add to Cart</a>
     </div>
     </div>
    
@@ -120,7 +122,9 @@
     @foreach ($Woman_Jacket as $data)
         <div class="col">
     <div class="card h-100 p-3">
+      <a href="{{ route('productdetails.page',$data->id) }}">
       <img src="{{ asset('storage/' . $data->Products_image) }}" class="card-img-top" alt="...">
+      </a>
       <div class="card-body">
         <h5 class="card-title">{{$data->title}}</h5>
         <p class="card-text">{{$data->description}}</p>
@@ -128,7 +132,7 @@
        <div class="d-flex justify-content-between align-items-center">
       <h3 class="text-danger">{{ $data->price }}</h3>
 
-      <a href="#" class="btn btn-warning">Bye Now</a>
+      <a href="{{ route('addtocart.store',$data->id) }}" class="btn btn-warning">Add to Cart</a>
     </div>
     </div>
    
@@ -156,8 +160,9 @@
     @foreach ($Shoes as $data)
         <div class="col">
     <div class="card h-100 p-3">
-   
+   <a href="{{ route('productdetails.page',$data->id) }}">
       <img src="{{ asset('storage/' . $data->Products_image) }}" class="card-img-top" alt="...">
+      </a>
  
       <div class="card-body">
         <h5 class="card-title">{{$data->title}}</h5>
@@ -166,7 +171,7 @@
        <div class="d-flex justify-content-between align-items-center">
       <h3 class="text-danger">{{ $data->price }}</h3>
 
-      <a href="#" class="btn btn-warning">Bye Now</a>
+      <a href="{{ route('addtocart.store',$data->id) }}" class="btn btn-warning">Add to Cart</a>
     </div>
     </div>
    
@@ -180,5 +185,8 @@
  </div>
     @endif
     <!-- shoes end -->
+
+
+
 
    @include('common-section.footer')

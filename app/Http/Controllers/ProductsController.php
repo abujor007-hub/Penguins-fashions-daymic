@@ -109,5 +109,71 @@ class ProductsController extends Controller
     return redirect()->back()->with('success', 'products deleted successfully');
  }
  
+//  public function addToCartStore (Request $request, $id){
+    
+//     $products= Products::findOrFail($id);
+
+//     $cart= session()->get('cart',[]);
+
+//     if(isset($cart[$products->id])){
+//         $cart[$products->id]['quintity']++;
+//     }else{
+//         $cart[$products->id]=[
+//             'id'=>$products->id,
+//             'name'=>$products->title,
+//             'quintity'=>1,
+//             'price'=>$products->price,
+//             'photo'=>$products->Products_image
+//         ];
+//     }
+//     session()->put('cart', $cart);
+
+//     return redirect()->back()->with('successs', 'Product added to cart successfully');
+//  }
+
+
+public function addToCartStore(Request $request, $id)
+{
+    $products = Products::findOrFail($id);
+
+    $cart = session()->get('cart', []);
+
+    if (isset($cart[$products->id])) {
+        $cart[$products->id]['quintity']++;
+    } else {
+        $cart[$products->id] = [
+            'id' => $products->id,
+            'name' => $products->title,
+            'quintity' => 1,
+            'price' => $products->price,
+            'photo' => $products->Products_image,
+        ];
+    }
+
+    session()->put('cart', $cart);
+
+    if ($request->action == 'checkout') {
+        return redirect()->route('checkout.page');
+    }
+
+    return back()->with('successs', 'Product added to cart successfully');
+}
+
+public function addToCartItemDelete($id){
+    $cart= session()->get('cart',[]);
+
+    if(isset($cart[$id])){
+        unset($cart[$id]);
+        session()->put('cart', $cart);
+    }
+    return redirect()->back()->with('success', 'product removed from cart successfully');
+}
+
+
+public function addToCartClear(){
+    session()->forget('cart');
+
+    return redirect()->route('home.page')->with('success' , 'cart cleared successfully');
+}
 
 }
