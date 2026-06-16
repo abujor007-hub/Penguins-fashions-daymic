@@ -202,4 +202,6 @@ public function quantity_update(Request $request,$id){
         return back();
 
 }
+
+
 }

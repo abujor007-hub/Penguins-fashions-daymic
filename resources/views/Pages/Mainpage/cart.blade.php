@@ -42,8 +42,8 @@
                                             <form action="{{ route('quantity.update', $item['id']) }}" method="POST">
                                                 @csrf
                                                 @method('PUT')
-
-                                                <input type="hidden" name="action" value="dec">
+ 
+                                               <input type="hidden" name="action" value="dec">
 
                                                 <button type="submit" class="border-0">-</button>
                                             </form>
