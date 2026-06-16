@@ -43,6 +43,7 @@
 
             <div class="div mb-3">
                 <h4> Quantity: {{ $products->quintity }} </h4>
+                
 
                 <div class="div mb-3">
                     <form action="{{ route('addtocart.store', $products->id) }}" method="get" class="d-flex gap-5">

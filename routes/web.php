@@ -11,9 +11,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
+   Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
+
+   
+  
 
 Route::middleware('auth')->group(function () {
+ 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
@@ -67,6 +71,8 @@ Route::delete('products/delete/page/{id}', [ProductsController::class, 'delete_p
 Route::get('addtocart/store/{id}', [ProductsController::class, 'addToCartStore'])->name('addtocart.store');
 Route::get('addtocart/item/delete/{id}', [ProductsController::class, 'addToCartItemDelete'])->name('addtocart.item.delete');
 Route::get('addtocart/clear', [ProductsController::class, 'addToCartClear'])->name('addtocart.clear');
+
+Route::put('cart/quantity/update/{id}',[ProductsController::class,'quantity_update'])->name('quantity.update');
 
 
 // add to cart route end

@@ -138,6 +138,8 @@ public function addToCartStore(Request $request, $id)
 
     $cart = session()->get('cart', []);
 
+
+
     if (isset($cart[$products->id])) {
         $cart[$products->id]['quintity']++;
     } else {
@@ -176,4 +178,28 @@ public function addToCartClear(){
     return redirect()->route('home.page')->with('success' , 'cart cleared successfully');
 }
 
+public function quantity_update(Request $request,$id){
+     $request->validate([
+            'action' => 'required|in:inc,dec'
+        ]);
+
+        $cart = session()->get('cart', []);
+
+        if (!isset($cart[$id])) {
+            return back()->with('error', 'Item not found in cart');
+        }
+
+        if ($request->action === 'inc') {
+            $cart[$id]['quintity']++;
+        }
+
+        if ($request->action === 'dec' && $cart[$id]['quintity'] > 1) {
+            $cart[$id]['quintity']--;
+        }
+
+        session()->put('cart', $cart);
+
+        return back();
+
+}
 }
