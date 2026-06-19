@@ -13,8 +13,9 @@
                             <div class="header-youraddress">
                                 <h2>Your Address</h2>
                             </div>
-                            <form action="" method="POST">
+                            <form action="{{ route('order.store') }}" method="POST">
                                 @csrf
+                                @method('POST')
 
                                 <div class="col-md-12">
                                     <label for="full name">full name*</label>

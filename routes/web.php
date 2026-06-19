@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Catagory_Controller;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\ProfileController;
@@ -17,6 +18,8 @@ Route::get('/', function () {
   
 
 Route::middleware('auth')->group(function () {
+
+    Route::post('order/store',[OrderController::class, 'store'])->name('order.store');
  
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -76,3 +79,7 @@ Route::put('cart/quantity/update/{id}',[ProductsController::class,'quantity_upda
 
 
 // add to cart route end
+
+  Route::get('/order-confirm/{id}', [OrderController::class, 'confirm'])->name('order.confirm');
+
+

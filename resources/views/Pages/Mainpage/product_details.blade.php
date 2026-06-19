@@ -42,7 +42,10 @@
             </div>
 
             <div class="div mb-3">
-                <h4>Quintity {{ $products->quintity }}</h4>
+             
+    <h4>Quantity:{{ $products->quintity }}</h4>
+
+
                 
 
                 <div class="div mb-3">
@@ -70,4 +73,7 @@
 
 </div>
 <!-- products info end -->
+
+
+
 @include('common-section.footer')

@@ -9,4 +9,8 @@ class Products extends Model
     protected $fillable = [
         'catagory', 'title', 'status', 'price', 'dis_price', 'quintity', 'Products_image', 'description'
     ];
+
+        public function orderItem(){
+        return $this->hasMany(OrderItem::class);
+    }
 }
