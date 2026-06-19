@@ -237,8 +237,9 @@
                         </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="bi bi-bar-chart"></i> Analytics
+                <a class="nav-link" href="{{ route('order.page') }}">
+                    <i class="bi bi-card-checklist"></i> 
+                    Order
                 </a>
             </li>
             <li class="nav-item">

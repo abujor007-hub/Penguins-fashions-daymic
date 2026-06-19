@@ -3,8 +3,33 @@
 <!-- products info start -->
 <div class="container mt-5 py-4">
     <div class="row row-cols-1 row-cols-md-2">
-        <div class="col">
-            <img src="{{ asset('storage/' . $products->Products_image) }}" alt="" style="width: 550px; height: 600px;">
+        <div class="col ">
+            <img id="mainImage" src="{{ asset('storage/' . $products->Products_image) }}" alt="" style="width: 550px; height: 600px; object-fit: cover;">
+
+             <div class="d-flex gap-2 mt-2 justify-content-between  " style="width: 500px">
+
+            <img src="{{ asset('storage/' . $products->Products_image) }}"
+                class="thumb border rounded"
+                width="100"
+                onclick="changeImage(this)">
+
+            <img src="{{ asset('storage/' . $products->Products_image) }}"
+                class="thumb border rounded"
+                width="100"
+                onclick="changeImage(this)">
+
+            <img src="{{ asset('storage/' . $products->Products_image) }}"
+                class="thumb border rounded"
+                width="100"
+                onclick="changeImage(this)">
+
+            <img src="{{ asset('Icon and image/jacket-2.png') }}"
+                class="thumb border rounded"
+                width="100"
+                onclick="changeImage(this)">
+              
+
+        </div>
 
 
         </div>
@@ -74,6 +99,22 @@
 </div>
 <!-- products info end -->
 
+<script>
+    function changeImage(element)
+    {
+        document.getElementById('mainImage').src = element.src;
+    }
+</script>
 
+<style>
+.thumb{
+    cursor:pointer;
+    transition:.3s;
+}
 
+.thumb:hover{
+    transform:scale(1.05);
+    border:2px solid green !important;
+}
+</style>
 @include('common-section.footer')

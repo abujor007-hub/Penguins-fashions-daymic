@@ -80,6 +80,11 @@ Route::put('cart/quantity/update/{id}',[ProductsController::class,'quantity_upda
 
 // add to cart route end
 
-  Route::get('/order-confirm/{id}', [OrderController::class, 'confirm'])->name('order.confirm');
+    Route::get('/order-confirm/{id}', [OrderController::class, 'confirm'])->name('order.confirm');
+    Route::get('order/data',[OrderController::class,'order_data'])->name('order.page');
+    Route::get('order/info/{id}', [OrderController::class, 'order_info'])->name('order.info.page');
+    Route::delete('order/item/delete/{id}', [OrderController::class, 'destroy'])->name('order.item.delete');
+    Route::put('order/status/update/{id}', [OrderController::class, 'updateStatus'])->name('order.status.update');
+   
 
 

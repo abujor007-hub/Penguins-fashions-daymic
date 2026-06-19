@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+
+use App\Mail\orderConfimMail;
 use App\Models\Order;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class OrderController extends Controller
 {
@@ -55,6 +58,9 @@ class OrderController extends Controller
    $order = Order::with('items.product')
     ->find($order->id);
 
+    Mail::to($order->email)->send(new orderConfimMail($order));
+  
+
         session()->forget('cart');
 
       return redirect()
@@ -70,5 +76,38 @@ class OrderController extends Controller
 
         return view('pages.mainpage.order-confirm', compact('order'));
     }
+
+    public function order_data(){
+        $order= Order::with('items.product')->get();
+        return view('pages.dashboardPage.order.order',compact('order'));
+    }
     
+    public function order_info($id){
+        $order= Order::with('items.product')->findOrFail($id);
+
+        return view('pages.dashboardPage.order.order-info',compact('order'));
+    }
+
+
+    public function destroy($id)
+{
+    $order = Order::findOrFail($id);
+
+  
+    $order->items()->delete();
+    $order->delete();
+
+    return back()->with('success', 'Order deleted successfully');
+}
+
+
+public function updateStatus(Request $request, $id)
+{
+    $order = Order::findOrFail($id);
+
+    $order->status = $request->status;
+    $order->save();
+
+    return back()->with('success', 'Order status updated successfully');
+}
 }
